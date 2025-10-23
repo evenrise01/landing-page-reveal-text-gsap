@@ -110,6 +110,7 @@ p {
   flex-direction: column;
   justify-content: space-between;
   clip-path: polygon(0 48%, 0 48%, 0 52%, 0 52%);
+  z-index: 2;
 }
 
 .container,
@@ -186,7 +187,7 @@ nav p#logo {
 .tag .word {
   position: relative;
   display: inline-block;
-  transform: translateY(100%);
+  transform: translateY(-100%);
   will-change: transform;
 }
 

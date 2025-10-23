@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import { useMediaQuery } from "react-responsive";
 
 export default function Home() {
-  const isMobile = window.innerWidth <= 1000;
+  const isMobile = useMediaQuery({ maxWidth: 1000 });
   useEffect(() => {
     // Register GSAP plugins
     gsap.registerPlugin(CustomEase, SplitText);
@@ -14,7 +14,7 @@ export default function Home() {
     CustomEase.create("hop", ".8, 0, .3, 1");
 
     const splitTextElements = (
-      selector,
+      selector: string,
       type = "words, chars",
       addFirstChar = false
     ) => {
@@ -70,7 +70,7 @@ export default function Home() {
     });
 
     const tl = gsap.timeline({ defaults: { ease: "hop" } });
-    const tags = gsap.utils.toArray(".tag");
+    const tags = gsap.utils.toArray(".tag") as Element[];
 
     tags.forEach((tag, index) => {
       tl.to(
@@ -141,8 +141,8 @@ export default function Home() {
           {
             x: isMobile ? "-3rem" : "-8rem",
             fontSize: isMobile ? "6rem" : "14rem",
+            fontWeight: "600",
             duration: 0.75,
-            fontWeight: "500",
             onComplete: () => {
               gsap.set(".preloader", {
                 clipPath: "polygon(0 0, 100% 0, 100% 50%, 0 50%)",
