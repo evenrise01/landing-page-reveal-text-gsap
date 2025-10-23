@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import { useMediaQuery } from "react-responsive";
 
 export default function Home() {
-  const isMobile = useMediaQuery({ query: "max-width: 1000px" });
+  const isMobile = window.innerWidth <= 1000;
   useEffect(() => {
     // Register GSAP plugins
     gsap.registerPlugin(CustomEase, SplitText);
@@ -19,8 +19,6 @@ export default function Home() {
       addFirstChar = false
     ) => {
       const elements = document.querySelectorAll(selector);
-      const splitInstances = [];
-
       elements.forEach((element) => {
         const splitText = new SplitText(element, {
           type,
@@ -38,11 +36,7 @@ export default function Home() {
             }
           });
         }
-
-        splitInstances.push(splitText);
       });
-
-      return splitInstances;
     };
 
     // Call the function for different elements
@@ -243,15 +237,15 @@ export default function Home() {
 
       <div className="container">
         <nav>
-          <p id="logo">K10</p>
+          <p id="logo">E10</p>
           <p>Menu</p>
         </nav>
 
         <div className="hero-img">
-          <img src="/hero-img.jpg" alt="Hero image" />
+          <img src="/hero-img3.jpg" alt="Hero image" />
         </div>
 
-        <div className="card">Kumo Studios</div>
+        <div className="card"><h1>Evenrise Studios</h1></div>
 
         <footer>
           <p>Scroll Down</p>
