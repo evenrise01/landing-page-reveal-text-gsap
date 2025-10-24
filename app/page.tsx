@@ -160,7 +160,7 @@ export default function Home() {
             clipPath: "polygon(0% 48%, 100% 48%, 100% 52%, 0% 52%)",
             duration: 1,
           },
-          5
+          4.5
         );
 
       tags.forEach((tag, index) => {
