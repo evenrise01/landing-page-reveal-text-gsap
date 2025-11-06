@@ -141,8 +141,8 @@ export default function Home() {
           {
             x: isMobile ? "-3rem" : "-8rem",
             fontSize: isMobile ? "6rem" : "14rem",
-            fontWeight: "600",
-            duration: 0.75,
+            fontWeight: "500",
+            duration: 0.7,
             onComplete: () => {
               gsap.set(".preloader", {
                 clipPath: "polygon(0 0, 100% 0, 100% 50%, 0 50%)",
@@ -158,9 +158,9 @@ export default function Home() {
           ".container",
           {
             clipPath: "polygon(0% 48%, 100% 48%, 100% 52%, 0% 52%)",
-            duration: 1,
+            duration: 0.7,
           },
-          4.5
+          ">="
         );
 
       tags.forEach((tag, index) => {
